@@ -9,7 +9,7 @@ const createUser = catchAsync(async (req, res) => {
     console.log("newUser", userData);
 
     const result = await UserServices.createUserIntoDB(userData);
-
+    
     sendResponse(res, {
         statusCode: statusCodes.OK,
         success: true,
