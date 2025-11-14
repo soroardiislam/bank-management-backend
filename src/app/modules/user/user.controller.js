@@ -4,19 +4,22 @@ import { UserServices } from "./user.service.js";
 import statusCodes from "http-status";
 
 
-const createUser = catchAsync(async(req, res) =>{
-    const {clientInfo} = req.body;
-    // console.log("newUser", newUser);
-    const result = await UserServices.createUserIntoDB(clientInfo);
+const createUser = catchAsync(async (req, res) => {
+    const userData = req.body; 
+    console.log("newUser", userData);
+
+    const result = await UserServices.createUserIntoDB(userData);
+
     sendResponse(res, {
         statusCode: statusCodes.OK,
         success: true,
         message: "User sign up successfully",
         data: result
-    })
-})
+    });
+});
+
 const loginUser = catchAsync(async(req, res) =>{
-    const {clientInfo} = req.body;
+    const clientInfo = req.body;
     const result = await UserServices.loginUserFromDB(clientInfo);
     sendResponse(res, {
         statusCode: statusCodes.OK,
