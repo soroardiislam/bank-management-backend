@@ -14,6 +14,7 @@ const createCreditDecisionIntoBD = async(payload) =>{
         return result;
     }
 }
+
 const getLoanStatusFromBD = async(email) =>{
     const result = await CreditDecision.findOne({email});
     return result;

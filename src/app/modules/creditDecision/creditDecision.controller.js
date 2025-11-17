@@ -14,6 +14,7 @@ const createCreditDecision = catchAsync(async(req, res) =>{
         data: result
     })
 })
+
 const getLoanStatus = catchAsync(async(req, res) =>{
     const {email} = req.params;
     const result = await CreditDecisionServices.getLoanStatusFromBD(email);
