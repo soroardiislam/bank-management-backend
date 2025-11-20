@@ -7,4 +7,4 @@ const validateRequest = (schema) =>{
     })
 }
 
-export default validateRequest;
+export default validateRequest; 

@@ -8,7 +8,7 @@ const globalErrorHandler = (err, req, res, next) =>{
             path: "",
             message: "Something went wrong"
         }
-    ]
+    ] 
     return res.status(statusCode).json({
         success: false,
         message,
